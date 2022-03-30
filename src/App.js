@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react'
+import './App.css'
+import {getTodos} from './services/todos-api'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Todos from './components/Todos'
 
 function App() {
+  const [todoList, setTodoList] = useState([])
+  useEffect(() => {
+    getTodos()
+    .then(res => setTodoList(res.data))
+  }, [])
+  console.log(todoList)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Todos />} />
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
