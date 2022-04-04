@@ -16,7 +16,7 @@ const [todoList, setTodoList] = useState([])
                 {todoList.map((todo, i) => {
                     return(
                         <li key = {i}>
-                            <h2><a href = {`View/${i}`}>{todo.description}</a></h2>
+                            <h2><a href = {`/${todo._id}`}>{todo.description}</a></h2>
                         </li>                     
                     )
                 })}
