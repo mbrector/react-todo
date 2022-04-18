@@ -23,8 +23,8 @@ function Edit() {
     <div>
         <h2>Edit To Do</h2>
         <form onSubmit={editTheTodo}>
-            <input type={'text'} name="description" defaultValue={data.description}/><br />
-            Complete: <input type={'checkbox'} name="complete" defaultChecked={data.complete}/>
+            <input type='text' name="description" defaultValue={data.description}/><br />
+            Complete: <input type='checkbox' name="complete" defaultChecked={data.complete}/>
             <input type='submit' />
         </form>
     </div>

@@ -15,10 +15,13 @@ const [todoList, setTodoList] = useState([])
             <ul className= "todo">
                 {todoList.map((todo, i) => {
                     return(
-                        !todo.complete?
+                        todo.complete?
                         <li key = {i}>
-                            <h2><a href = {`/${todo._id}`}>{todo.description}</a></h2>
-                        </li>:null                    
+                            <strike><h2><a href = {`/${todo._id}`}>{todo.description}</a></h2></strike>
+                        </li>
+                        :<li key = {i}>
+                            <h2><a style={{backgroundColor:'aquamarine'}} href = {`/${todo._id}`}>{todo.description}</a></h2>
+                        </li>                  
                     )
                 })}
             </ul>

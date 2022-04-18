@@ -20,7 +20,7 @@ function View() {
       <div>
         <h2>To Do:</h2>
         <h2>{todoList.description}</h2><br /><br />
-        Complete: <input type="checkbox" defaultChecked={todoList.complete} disabled /><br />
+        Complete: <input type="checkbox" checked={todoList.complete} /><br />
         <button onClick={() => {navigate(`/${id}/Edit`)}}>Edit To Do</button>
         <button onClick={deleteTheTodo}>Delete</button>
     </div>
